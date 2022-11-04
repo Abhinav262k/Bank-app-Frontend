@@ -1,0 +1,23 @@
+Data Binding
+
+
+1-> One way Binding
+
+html-> ts or ts -> html
+
+
+ts -- component
+html-- view
+
+
+1.1 Component to view (ts--> html)
+
+       a) string interpolation - {{expression}}
+
+       b) Property Binding - [attribute name]="Property"
+
+
+1.2 view to component (html -> ts)
+
+       a) Event Binding - (event name )="function name()"  
+       b) Event Bindingusing $(event) - (event name)="function name($event)"
