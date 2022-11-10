@@ -21,3 +21,65 @@ html-- view
 
        a) Event Binding - (event name )="function name()"  
        b) Event Bindingusing $(event) - (event name)="function name($event)"
+       c) Event Binding using template referencing variable - #variable name
+
+       -----------(change)="acnoChange($event)"-------------
+       -----------(change)="pswdChange($event)"-------------
+
+
+2 --> Two Way Binding
+
+
+
+
+-----------Angular Routing-----------
+
+
+-->> to set the path for a component
+
+{
+       path:value, component:class Name
+},
+
+{
+       path:value, component :class Name
+}
+
+use <router-outlet> </router-outlet>  inside root component
+
+
+Dependancy Injection
+-------------------------
+
+TO share the data between dependent classes
+
+
+Angular Services
+----------------
+
+ng g s servicename
+
+
+Angular Directives
+--------------------
+
+To manipulate DOM elements
+
+a)component Directives
+
+b)structural directives
+     1)*ngFor
+
+
+     Angular Forms
+ ---------------------
+   a)Template Driven forms(first design html)
+   b)Model driven forms(first ts file --> html design)  -Advance validation methods
+         1)Reactive Forms
+           Form group,array,control
+
+           -we can directly add validation methods
+              -->Add Validation
+              -->Import reactive forms modules 
+
+

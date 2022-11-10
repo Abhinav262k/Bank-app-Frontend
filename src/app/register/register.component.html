@@ -1,0 +1,36 @@
+
+<div class="row">
+    <div class="align-center">
+        <img src="../../assets/images/unnamed.png" alt="">
+    </div>
+
+        <div class="text-center mt-4 name">
+            <h3>Welcome To</h3>
+            <h1>YONO SBI</h1>
+        </div>
+        <h6>{{aim}}</h6>
+
+
+<form [formGroup]="registerForm" class="pt-3 mt-3">
+                <div class="form-field d-flex align-items-center">
+                    <input formControlName="uname" type="text" name="username" id="regname" placeholder="Username">
+                     </div>
+
+                     <div class="form-field d-flex align-items-center">
+                        <input  formControlName="acno" type="text" name="Accountnumber" id="regacno" placeholder="Account Number">
+                         </div>
+
+                     <div class="form-field d-flex align-items-center">
+                        <input  formControlName="pswd" type="password" name="password" id="regpswd" placeholder="Password">
+                     </div>
+
+                     <button type="button" class="btn btn-outline-dark" (click)="register()">Register</button>
+
+                     
+            </form>
+            <div class="text-center fs-5 mt-3">
+                <a href="#">Forgot password</a> OR <a routerLink="">Login</a>
+            </div>
+
+
+            </div>

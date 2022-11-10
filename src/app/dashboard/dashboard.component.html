@@ -1,0 +1,88 @@
+<div class="parent">
+    <h2>Welcome {{user}}</h2>
+    <div class="child1">
+        
+<div class="row">
+    <div class="align-center">
+        <img src="../../assets/images/unnamed.png" alt="">
+    </div>
+
+        <div class="text-center mt-4 name">
+            <h3>Deposit</h3>
+            
+        </div>
+       
+
+
+<form class="pt-3 mt-3">
+
+
+                     <div class="form-field d-flex align-items-center">
+                        <input  [(ngModel)]="acno" type="text" name="Accountnumber" id="depoacno" placeholder="Account Number">
+                         </div>
+
+                     <div class="form-field d-flex align-items-center">
+                        <input  [(ngModel)]="pswd" type="password" name="password" id="depopswd" placeholder="PIN NUMBER">
+                     </div>
+
+                     <div class="form-field d-flex align-items-center">
+                        <input [(ngModel)]="amount" type="number" name="username" id="deponame" placeholder="Deposited Amount">
+                         </div>
+
+                     <button type="button" class="btn btn-outline-light" (click)="deposit()">Submit</button>
+
+                     
+            </form>
+            <div class="text-center fs-5 mt-3">
+                <a id="a2" href="#">Forgot password</a> OR <a id="a2" routerLink="register">Sign Up</a>
+            </div>
+    
+        </div>
+    </div>
+
+
+    <div class="child2">
+        
+<div class="row">
+    <div class="align-center">
+        <img src="../../assets/images/unnamed.png" alt="">
+    </div>
+
+        <div class="text-center mt-4 name">
+            <h3>Withdraw</h3>
+            
+        </div>
+       
+
+
+<form class="pt-3 mt-3">
+
+
+                     <div class="form-field d-flex align-items-center">
+                        <input  [(ngModel)]="acno1" type="text" name="Accountnumber" id="withacno" placeholder="Account Number">
+                         </div>
+
+                     <div class="form-field d-flex align-items-center">
+                        <input  [(ngModel)]="pswd1" type="password" name="password" id="withpswd" placeholder="PIN NUMBER">
+                     </div>
+
+                     <div class="form-field d-flex align-items-center">
+                        <input [(ngModel)]="amount1" type="number" name="username" id="withname" placeholder="Withdrawel Amount">
+                         </div>
+
+                     <button type="button" class="btn btn-outline-light" (click)="withdraw()">Submit</button>
+
+                     
+            </form>
+            <div class="text-center fs-5 mt-3">
+                <a id="a2" href="#">Forgot password</a> OR <a id="a2" routerLink="register">Sign Up</a>
+            </div>
+    
+        </div>
+
+    </div>
+    <div>
+        <a id="a1" routerLink="/transaction">View Transaction History</a>
+        
+    </div>
+</div>

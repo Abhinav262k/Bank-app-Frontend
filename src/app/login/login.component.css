@@ -1,18 +1,17 @@
 .row{
     border-radius: 2px;
-    background-color: rgb(255, 255, 255);
+    background-color:  rgb(71, 90, 255);
     width: 300px;
-    height: 500px;
+    height: 550px;
     align-content: center;
     margin-top: 100px;
     margin-left: 600px;
     border-radius: 30px;
     border: 2px;
     box-shadow: -2px -4px 8px 8px  ;
-    color: rgb(155, 152, 152);
+    color: rgb(73, 71, 71);
    
 }
-
 img{
     border-radius: 200px;
     width: 100px;
@@ -28,13 +27,13 @@ h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 h1{
-    color: rgb(104, 35, 132);
+    color: rgb(0, 0, 0);
     font-family: 'Times New Roman', Times, serif;
 }
 
 a{
     text-decoration: none;
-    color: rgb(137, 14, 158);
+    color: rgb(0, 0, 0);
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -46,16 +45,16 @@ input{
 }
 
 button{
-        color: rgb(108, 3, 108);
+        color: rgb(185, 183, 185);
         }
 
 h3{
-    color: rgb(70, 33, 67);
+    color: rgb(0, 0, 0);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }        
 
 h6{
-    color: rgb(104, 35, 132);
+    color: rgb(0, 0, 0);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
 }        

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataserviceService } from '../services/dataservice.service';
 
 @Component({
   selector: 'app-login',
@@ -8,23 +10,20 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit { //3rd execution 
 
   aim = 'Your perfect banking partner'
-  account = "Enter Your Ac No Here"
+  account ="Enter Your Ac No Here"
   Password = "Password must be 4 characters"
 
   acno = '';
   pswd = '';
 
-  constructor() { } //1st execution
+  constructor(private router:Router,private ds:DataserviceService) { } //1st execution
+
+  //dependancy injection
 
   ngOnInit(): void { // life cycle hooks - initial process
   }
 
-   userDetails:any = { //object of objects
-    1000: { acno: 1000, username: 'Nihal', password: 100, balance: 2000 },
-    1001: { acno: 1001, username: 'Jowsha', password: 101, balance: 3000 },
-    1002: { acno: 1002, username: 'Albin', password: 102, balance: 4000 },
-
-  }
+   
 
   // userdefined function() / 4th execution
 
@@ -39,27 +38,70 @@ export class LoginComponent implements OnInit { //3rd execution
     this.pswd = event.target.value;
   }
 
-
-
-  login() {
-    //alert('Login Button clicked');
-    var acno = this.acno;
+  login(){
+    var acno = this.acno; 
     var pswd = this.pswd;
 
-    var userDetails=this.userDetails;
+    const result=this.ds.login(acno,pswd);
+    if(result){
+      alert("Login Successful");
+      this.router.navigateByUrl('dashboard');
 
-    if (acno in userDetails) {
-      if(pswd==userDetails[acno]['password']) {
-        alert("login succesfull");
-      }
-      else{
-        alert("Incorrect password")
-      }
-    }
-    else {
-      alert("user does not exist");
     }
 
   }
-
 }
+  
+
+  
+
+
+
+//   login() {
+//   //alert('Login Button clicked');
+//     var acno = this.acno;
+//     var pswd = this.pswd;
+
+//     var userDetails=this.userDetails;
+
+//     if (acno in userDetails) {
+//       if(pswd==userDetails[acno]['password']) {
+//         alert("login succesfull");
+//         this.router.navigateByUrl('dashboard');
+//       }
+//       else{
+//         alert("Incorrect password")
+//       }
+//     }
+//     else {
+//       alert("user does not exist");
+//     }
+
+//   }
+// }
+
+
+
+
+// login(a:any,p:any) {
+//   //alert('Login Button clicked');
+//   var acno = a.value;
+//   var pswd = p.value;
+
+//   var userDetails=this.userDetails;
+
+//   if (acno in userDetails) {
+//     if(pswd==userDetails[acno]['password']) {
+//       alert("login succesfull");
+//     }
+//     else{
+//       alert("Incorrect password")
+//     }
+//   }
+//   else {
+//     alert("user does not exist");
+//   }
+
+// }
+
+// }
