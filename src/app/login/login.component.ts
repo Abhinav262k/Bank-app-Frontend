@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataserviceService } from '../services/dataservice.service';
 
@@ -13,10 +14,17 @@ export class LoginComponent implements OnInit { //3rd execution
   account ="Enter Your Ac No Here"
   Password = "Password must be 4 characters"
 
+  //login model
+
+  loginForm=this.fb.group({ //group
+    acno:['',[Validators.required,Validators.pattern('[0-9]*')]],      //arrays
+    pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
+  })
+
   acno = '';
   pswd = '';
 
-  constructor(private router:Router,private ds:DataserviceService) { } //1st execution
+  constructor(private router:Router,private ds:DataserviceService, private fb:FormBuilder) { } //1st execution
 
   //dependancy injection
 
@@ -27,20 +35,24 @@ export class LoginComponent implements OnInit { //3rd execution
 
   // userdefined function() / 4th execution
 
-  acnoChange(event: any) {
-    //console.log(event);
-    console.log(event.target.value);
-    this.acno = event.target.value;
-  }
+  // acnoChange(event: any) {
+  //   //console.log(event);
+  //   console.log(event.target.value);
+  //   this.acno = event.target.value;
+  // }
 
-  pswdChange(event: any) {
-    console.log(event.target.value);
-    this.pswd = event.target.value;
-  }
+  // pswdChange(event: any) {
+  //   console.log(event.target.value);
+  //   this.pswd = event.target.value;
+  // }
 
   login(){
-    var acno = this.acno; 
-    var pswd = this.pswd;
+
+    console.log(this.loginForm)
+    if(this.loginForm.valid){
+
+    var acno = this.loginForm.value.acno; 
+    var pswd = this.loginForm.value.pswd;
 
     const result=this.ds.login(acno,pswd);
     if(result){
@@ -50,9 +62,15 @@ export class LoginComponent implements OnInit { //3rd execution
     }
 
   }
+
+  else{
+    console.log(this.loginForm.get('acno')?.errors);
+ 
+
+  }
 }
   
-
+}
   
 
 

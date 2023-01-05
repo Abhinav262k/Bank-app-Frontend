@@ -83,3 +83,32 @@ b)structural directives
               -->Import reactive forms modules 
 
 
+Local Storage
+     -getItem
+     -getItem
+     -removeItem
+     
+     
+     
+----parent child relationships----
+
+      parent to child communication - @Input()
+      child to parent communication - @Output()
+
+
+ ------Angular pipes-----
+
+ {{value-expression | date [:format [timezone]]  }}     
+
+
+
+
+
+
+
+ 
+
+
+
+
+

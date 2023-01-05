@@ -1,5 +1,15 @@
-<div class="parent">
-    <h2>Welcome {{user}}</h2>
+
+<button id="b2" type="button" class="btn btn-danger" value="Delete" (click)="delete()">Delete</button>
+<button id="b1" type="button" class="btn btn-outline-danger" value="Logout" (click)="logout()">Logout</button>
+
+
+
+<div class="parent" [ngClass]="acno? 'style1':'' ">
+    <h2>WELCOME  {{user}}</h2>
+    <!-- <h4>{{SystemDate | date}}</h4> -->
+    <h4>{{SystemDate | date : 'short'}}</h4>
+
+<app-delete [item]="acno" (click)="onCancel()"></app-delete>
     <div class="child1">
         
 <div class="row">
@@ -29,7 +39,7 @@
                         <input [(ngModel)]="amount" type="number" name="username" id="deponame" placeholder="Deposited Amount">
                          </div>
 
-                     <button type="button" class="btn btn-outline-light" (click)="deposit()">Submit</button>
+                     <button type="button" class="btn btn-outline-dark" (click)="deposit()">Submit</button>
 
                      
             </form>
@@ -70,7 +80,7 @@
                         <input [(ngModel)]="amount1" type="number" name="username" id="withname" placeholder="Withdrawel Amount">
                          </div>
 
-                     <button type="button" class="btn btn-outline-light" (click)="withdraw()">Submit</button>
+                     <button type="button" class="btn btn-outline-dark" (click)="withdraw()">Submit</button>
 
                      
             </form>

@@ -22,7 +22,45 @@ export class DataserviceService {
     
 }
 
-constructor() {}  //dependancy
+constructor() {
+
+  this.getDetails()
+}  //dependancy
+
+//saveDetails() - to save the data in the localstorage
+
+saveDetails(){
+  if(this.userDetails){
+    localStorage.setItem('dataBase',JSON.stringify(this.userDetails));
+  }
+  if(this.currentAcno){
+    localStorage.setItem('currentAcno',JSON.stringify(this.currentUser));
+  }
+  if(this.currentUser){
+    localStorage.setItem('currentUser',JSON.stringify(this.currentUser));
+  }
+}
+
+//getDetaila() -to get the data from the local storage
+
+getDetails(){
+  if(localStorage.getItem('dataBase')){
+    this.userDetails=JSON.parse(localStorage.getItem('dataBase')  || '');
+  }
+}
+
+getcurrentUser(){
+  if(localStorage.getItem('currentUser')){
+    this.userDetails=JSON.parse(localStorage.getItem('currentUser')|| '');
+  }
+}
+
+getcurrentAcno(){
+  if(localStorage.getItem('currentAcno')){
+    this.userDetails=JSON.parse(localStorage.getItem('currentAcno') || '');
+  }
+}
+
 
 register(acno:any,username:any,password:any){
   let userDetails=this.userDetails;
@@ -41,6 +79,7 @@ register(acno:any,username:any,password:any){
     }
 
     console.log(userDetails);
+    this.saveDetails(); //function call
     
     return true;
   }
@@ -54,6 +93,7 @@ register(acno:any,username:any,password:any){
       if(pswd==userDetails[acno]['password']){
         this.currentUser=this.userDetails[acno]['username']
         this.currentAcno=acno;
+        this.saveDetails(); //function call
         return true;
       }
       else{
@@ -80,6 +120,8 @@ register(acno:any,username:any,password:any){
         
         })
         console.log(userDetails);
+        this.saveDetails();  //function call
+        
 
         return userDetails[acno]['balance'];
       }
@@ -112,6 +154,7 @@ register(acno:any,username:any,password:any){
             amount
           })
           console.log(userDetails);
+          this.saveDetails();
           
           return userDetails[acno]['balance'];
 

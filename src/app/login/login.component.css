@@ -1,6 +1,6 @@
 .row{
     border-radius: 2px;
-    background-color:  rgb(71, 90, 255);
+    background-color:  rgb(255, 255, 255);
     width: 300px;
     height: 550px;
     align-content: center;
@@ -9,11 +9,11 @@
     border-radius: 30px;
     border: 2px;
     box-shadow: -2px -4px 8px 8px  ;
-    color: rgb(73, 71, 71);
+    color: rgb(136, 135, 135);
    
 }
 img{
-    border-radius: 200px;
+    border-radius: 10px;
     width: 100px;
     height: 100px;
     margin-top: 45px;
@@ -27,11 +27,17 @@ h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 h1{
-    color: rgb(0, 0, 0);
+    color: rgb(86, 13, 108);
     font-family: 'Times New Roman', Times, serif;
 }
 
 a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#a1{
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-family: 'Times New Roman', Times, serif;
